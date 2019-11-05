@@ -1,0 +1,9 @@
+<li class="tasks">
+  <%= simple_format(task.description) %>
+
+  <span>
+    <%= link_to "update", edit_task_path(task), class: "to-right", id: "edit-task" %>
+    <%= link_to "remove", task, method: :delete,
+        data: {confirm: "You sure?"}, class: "to-right", id: "del-task" %>
+  </span>
+</li>

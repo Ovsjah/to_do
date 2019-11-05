@@ -1,0 +1,17 @@
+<%= form_with(model: model, url: url, local: true) do |f| %>
+  <%= render 'shared/error_messages', object: model %>
+  
+  <% if model.class == User %>
+    <%= render "users/fields", form: f %>
+  <% end %>
+
+  <% if model.class == Todo %>
+    <%= render "todos/field", form: f %>
+  <% end %>
+
+  <% if model.class == Task %>
+    <%= render "tasks/field", form: f %>
+  <% end %>
+
+  <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+<% end %>

@@ -1,0 +1,5 @@
+<% if yield(:title) == "Sign up" %>
+  <li><%= link_to "Log in", login_path, class: 'auth' %></li>
+<% else %>
+  <li><%= link_to "Sign up", signup_path, class: 'auth' %></li>
+<% end %>

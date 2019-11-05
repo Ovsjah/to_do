@@ -1,0 +1,10 @@
+<% provide(:title, "Sign up") %>
+<% provide(:button_text, "Register now") %>
+
+<h1>Sign up</h1>
+
+<div class='row'>
+  <div class="col-md-6 col-md-offset-3">
+    <%= render 'shared/form', model: @user, url: signup_path %>
+  </div>
+</div>

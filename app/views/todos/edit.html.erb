@@ -1,0 +1,10 @@
+<% provide(:title, "Edit todo") %>
+<% provide(:button_text, "Save changes") %>
+
+<h1>Update your <%= @todo.title %> todo</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= render "shared/form", model: @todo, url: @todo %>
+  </div>
+</div>

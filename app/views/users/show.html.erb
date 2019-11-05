@@ -1,0 +1,13 @@
+<% provide(:title, @user.name) %>
+
+<div class='row'>
+  <h1 id="acc">
+    <%= gravatar_for @user, size: 120 %>
+    <span id="name"><%= @user.name %></span>
+    <%= link_to "add todo", new_todo_path, id: "new-todo" %>
+  </h1>
+</div>
+
+<div class='row'>
+  <ul><%= render @user.todos %></ul>
+</div>

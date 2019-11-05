@@ -1,0 +1,9 @@
+<li class="todos">
+  <span><%= todo.title %></span>
+  <%= link_to "add tasks", new_task_path(todo_id: todo.id), class: "to-right", id: "add-task" %>
+  <%= link_to "edit todo title", edit_todo_path(todo), class: "to-right", id: "edit-todo" %>
+  <%= link_to "remove todo", todo, method: :delete,
+    class: "to-right", id: "del-todo", data: {confirm: "You sure?"} %>
+</li>
+
+<ul><%= render todo.tasks, todo_id: todo.id %></ul>
