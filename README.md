@@ -9,3 +9,5 @@ Each Todo-list has tasks. Users have ability to signup, login/logout.
 CRUD support for UsersController, TodosController and TasksController.
 
 All models/controllers are covered by specs with Rspec.
+
+Deployed on Heroku, accessible via https://todo-app-smetner-associates.herokuapp.com/
