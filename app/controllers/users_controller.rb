@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   include Signinable, SessionsHelper
 
-  before_action :signed_in_user, :get_user, :correct_user, except: %i[new create]
+  before_action :signed_in_user, :correct_user, except: %i[new create show]
 
   def new
     @user = User.new
@@ -28,6 +28,12 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+    signed_in_user
+    @user = User.includes(todos: :tasks).find(params[:id])
+    correct_user
+  end
+
   def destroy
     @user.destroy
     flash[:success] = "User deleted"
@@ -38,9 +44,5 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
-  end
-
-  def get_user
-    @user = User.find(params[:id])
   end
 end

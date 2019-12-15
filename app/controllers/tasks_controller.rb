@@ -2,9 +2,9 @@ class TasksController < ApplicationController
   include SessionsHelper
 
   before_action :signed_in_user
-  before_action :to_current_user, only: %i[new create]
-  before_action :get_todo, only: %i[new create]
-  before_action :get_task, :get_user, :correct_user, only: %i[edit update destroy]
+  before_action :to_current_user, :get_todo, only: %i[new create]
+  before_action :get_user, :correct_user, only: :edit
+  before_action :get_task, :get_user, :correct_user, only: %i[update destroy]
 
   def new
     @task = Task.new
@@ -19,6 +19,10 @@ class TasksController < ApplicationController
     else
       render :new
     end
+  end
+
+  def edit
+    @task = Task.includes(:todo).find(params[:id])
   end
 
   def update
