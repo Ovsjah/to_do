@@ -25,6 +25,12 @@ textarea {
   resize: vertical;
 }
 
+pre {
+  width: 100%;
+	overflow: auto;
+	overflow-y: hidden;
+}
+
 .center {
   text-align: center;
   h1 {
@@ -68,6 +74,7 @@ a:hover, a:active {
   margin-right: auto;
   width: 915px;
 }
+
 /* header */
 
 #logo {
@@ -130,6 +137,8 @@ input {
   width: auto;
   margin-left: 0;
 }
+
+/* profile */
 
 #acc {
   margin-left: 20px;
@@ -212,33 +221,8 @@ input {
       }
     }
   }
+
   .tasks {
-    color: gray;
-    padding: 5px;
-    border-bottom: 1px solid $gray-lighter;
-    border-radius: 10px;
-    #del-task, #edit-task {
-      top: -17px;
-      padding: 0 3px 0 3px;
-      font-size: 0.8em;
-      float: right;
-      border-radius: 7px;
-      font-weight: bold;
-      color: white;
-    }
-    #del-task {
-      left: 30px;
-      background-color: red;
-      &:hover {
-        color: #606060;
-      }
-    }
-    #edit-task {
-      left: 15px;
-      background-color: #0087BD;
-      &:hover {
-        color: blue;
-      }
-    }
+    padding: 15px;
   }
 }

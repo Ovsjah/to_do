@@ -1,9 +1,9 @@
-<li class="tasks">
+<li class='tasks'>
   <pre><%= task.description %></pre>
 
-  <span>
-    <%= link_to "update", edit_task_path(task), class: "to-right", id: "edit-task" %>
+  <div class="btn-group btn-group-xs">
+    <%= link_to "update", edit_task_path(task), class: "btn btn-success" %>
     <%= link_to "remove", task, method: :delete,
-        data: {confirm: "You sure?"}, class: "to-right", id: "del-task" %>
-  </span>
+        data: {confirm: "You sure?"}, class: "btn btn-danger" %>
+  </div>
 </li>
